@@ -36,3 +36,11 @@ function iqTest(numbers){
     
     return e[0]+1;
 }
+
+// Separate the words with a space.
+function songDecoder(song) {
+    return song
+      .split('WUB')
+      .filter(Boolean)
+      .join(' ')
+}
