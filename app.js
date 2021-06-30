@@ -44,3 +44,18 @@ function songDecoder(song) {
       .filter(Boolean)
       .join(' ')
 }
+
+// Find the divisors!
+function divisors(integer) {
+    let arguments = [];
+    for (let i = 2; i < integer; i++) {
+      if (integer % i == 0) {
+        arguments.push(i);
+      }
+    }
+    if (arguments == '') {
+      return `${integer} is prime`;
+    } else {
+      return arguments;
+    }
+}
