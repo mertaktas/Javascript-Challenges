@@ -62,11 +62,11 @@ function divisors(integer) {
 
 /* Take a Ten Minute Walk
 
- Note: you will always receive a valid array 
- containing a random assortment 
- of direction letters ('n', 's', 'e', or 'w' only). 
- It will never give you an empty array 
- (that's not a walk, that's standing still!).
+Note: you will always receive a valid array 
+containing a random assortment 
+of direction letters ('n', 's', 'e', or 'w' only). 
+It will never give you an empty array 
+(that's not a walk, that's standing still!).
 
 */
  function isValidWalk(walk) {
@@ -102,4 +102,22 @@ function addBinary( a, b ){
     }
   
     return binary;
+}
+
+/* Valid Parentheses
+
+    Write a function that takes a string of parentheses, 
+    and determines if the order of the parentheses is valid. 
+    The function should return true if the string is valid, 
+    and false if it's invalid.
+
+*/
+function validParentheses(parens) {
+    let paren = parens;
+  
+    for (let i = 0; i < parens.length; i++) {
+      paren = paren.split('()').join('');
+    }
+    
+    return paren.length === 0 ? true : false
 }
