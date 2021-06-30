@@ -59,3 +59,27 @@ function divisors(integer) {
       return arguments;
     }
 }
+
+/* Take a Ten Minute Walk
+
+ Note: you will always receive a valid array 
+ containing a random assortment 
+ of direction letters ('n', 's', 'e', or 'w' only). 
+ It will never give you an empty array 
+ (that's not a walk, that's standing still!).
+
+*/
+ function isValidWalk(walk) {
+    let ns = 0, ew = 0; 
+    if(walk.length === 10){
+      for (let i of walk) { 
+        if (i == 'n') ns += 1; 
+        if (i == 's') ns -= 1; 
+        if (i == 'e') ew += 1; 
+        if (i == 'w') ew -= 1; 
+      } 
+    }
+    else
+      return false
+      return ns === 0 && ew === 0; 
+}
