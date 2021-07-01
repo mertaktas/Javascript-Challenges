@@ -140,18 +140,33 @@ function validBraces(braces){
   return brace.length === 0 ? true : false
 }
 
-console.log('true :'+ validBraces( "()" )) // true
-console.log('true :'+ validBraces( "[]" )) // true
-console.log('true :'+ validBraces( "{}" )) // true
-console.log('true :'+ validBraces( "(){}[]" )) // true
-console.log('true :'+ validBraces( "([{}])" )) // true
-console.log('false :'+ validBraces( "(}" )) // false
-console.log('false :'+ validBraces( "[(])" )) // false
-console.log('true :'+ validBraces( "({})[({})]" )) // true
-console.log('false :'+ validBraces( "(})" )) // false
-console.log('true :'+ validBraces( "(({{[[]]}}))" )) //true
-console.log('true :'+ validBraces( "{}({})[]" )) // true
-console.log('false :'+ validBraces( ")(}{][" )) // false
-console.log('false :'+ validBraces( "())({}}{()][][" )) // false
-console.log('false :'+ validBraces( "(((({{" ))  // false
-console.log('false :'+ validBraces( "}}]]))}])" )) // false
+// console.log('true :'+ validBraces( "()" )) // true
+// console.log('true :'+ validBraces( "[]" )) // true
+// console.log('true :'+ validBraces( "{}" )) // true
+// console.log('true :'+ validBraces( "(){}[]" )) // true
+
+/* Bouncing Balls
+
+A child is playing with a ball on the nth floor of a tall building. 
+The height of this floor, h, is known.
+He drops the ball out of the window. The ball bounces (for example),
+to two-thirds of its height (a bounce of 0.66).
+His mother looks out of a window 1.5 meters from the ground.
+How many times will the mother see the ball pass 
+in front of her window (including when it's falling and bouncing?
+
+*/
+function bouncingBall(h,  bounce,  window) {
+  let count = -1;
+  let newH = h;
+  if(h != 0 && bounce > 0 && bounce < 1 && h > window){
+    while(newH > window){
+      newH = newH * bounce;
+      count += 2
+    }
+  }
+  return count;
+}
+
+// console.log('3 : ' + bouncingBall(3.0, 0.66, 1.5));
+// console.log('15 : ' + bouncingBall(30.0, 0.66, 1.5));
