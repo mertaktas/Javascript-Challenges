@@ -170,3 +170,29 @@ function bouncingBall(h,  bounce,  window) {
 
 // console.log('3 : ' + bouncingBall(3.0, 0.66, 1.5));
 // console.log('15 : ' + bouncingBall(30.0, 0.66, 1.5));
+
+/* Write Number in Expanded Form
+
+You will be given a number and 
+you will need to return it as a string in Expanded Form.
+
+*/
+function expandedForm(num) {
+let number = num.toString().split('')
+let x = 1
+let newNumber = []
+let lastNumber = []
+
+for (let i = number.length-1; i >= 0; i--) {
+  newNumber.unshift(Number(number[i]) * x)
+  x *= 10;
+}
+
+lastNumber = newNumber.filter(number => number != 0).join(' + ');
+  
+return lastNumber
+}
+
+// console.log('10 + 2 : ' + expandedForm(12));
+// console.log('40 + 2 : ' + expandedForm(42));
+// console.log('70000 + 300 + 4 : ' + expandedForm(70304));
