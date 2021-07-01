@@ -121,3 +121,37 @@ function validParentheses(parens) {
     
     return paren.length === 0 ? true : false
 }
+
+/* Valid Braces
+
+Write a function that takes a string of braces, 
+and determines if the order of the braces is valid. 
+It should return true if the string is valid, 
+and false if it's invalid.
+
+*/
+function validBraces(braces){
+  let brace = braces;
+  for (let i = 0; i < braces.length; i++) {
+      brace = brace.split('()').join('');
+      brace = brace.split('{}').join('');
+      brace = brace.split('[]').join('');
+  }
+  return brace.length === 0 ? true : false
+}
+
+console.log('true :'+ validBraces( "()" )) // true
+console.log('true :'+ validBraces( "[]" )) // true
+console.log('true :'+ validBraces( "{}" )) // true
+console.log('true :'+ validBraces( "(){}[]" )) // true
+console.log('true :'+ validBraces( "([{}])" )) // true
+console.log('false :'+ validBraces( "(}" )) // false
+console.log('false :'+ validBraces( "[(])" )) // false
+console.log('true :'+ validBraces( "({})[({})]" )) // true
+console.log('false :'+ validBraces( "(})" )) // false
+console.log('true :'+ validBraces( "(({{[[]]}}))" )) //true
+console.log('true :'+ validBraces( "{}({})[]" )) // true
+console.log('false :'+ validBraces( ")(}{][" )) // false
+console.log('false :'+ validBraces( "())({}}{()][][" )) // false
+console.log('false :'+ validBraces( "(((({{" ))  // false
+console.log('false :'+ validBraces( "}}]]))}])" )) // false
