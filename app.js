@@ -210,7 +210,37 @@ function domainName(url){
   return url.split('.')[0];
 };
 
-console.log('google : ' + domainName("http://google.com"));
-console.log('google : ' + domainName("http://google.co.jp"));
-console.log('xakep : ' + domainName("www.xakep.ru"));
-console.log('youtube : ' + domainName("https://youtube.com"));
+// console.log('google : ' + domainName("http://google.com"));
+// console.log('google : ' + domainName("http://google.co.jp"));
+// console.log('xakep : ' + domainName("www.xakep.ru"));
+// console.log('youtube : ' + domainName("https://youtube.com"));
+
+/* Simple Pig Latin
+
+Move the first letter of each word to the end of it, 
+then add "ay" to the end of the word. 
+Leave punctuation marks untouched.
+
+*/
+function pigIt(str){
+  let newString = str.split(' ')
+  let newItem = [];
+  let result = []
+  for (let i = 0; i < newString.length; i++) {
+    newItem = newString[i].split('');
+    if(newItem != '!' && newString[i] !== '?'){
+      newItem.shift()
+    }
+    if(newString[i] !== '!' && newString[i] !== '?') {
+      result.push(newItem.join('') + newString[i][0] + 'ay')
+    }else{
+      result.push(newItem)
+    }
+  }
+
+  return result.join(' ')
+}
+
+// console.log('igPay atinlay siay oolcay : ' + pigIt('Pig latin is cool'));
+// console.log('hisTay siay ymay tringsay : ' + pigIt('This is my string'));
+// console.log('elloHay orldway ! : ' + pigIt('Hello world !'));
