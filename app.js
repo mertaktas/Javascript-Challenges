@@ -204,21 +204,13 @@ parses out just the domain name and returns it as a string.
 
 */
 function domainName(url){
-  let result = []
-  let newResult = []
-  result.push(url.split('http://').join('').split('https://').join('').split('www.').join(''))
-  for (let i = 0; i < url.length; i++) {
-    if(result[0][i] != '.'){
-      newResult.push(result[0][i])
-    }else{
-      break
-    }
-  }
-  
-  return newResult.join('')
-}
+  url = url.replace("https://", '');
+  url = url.replace("http://", '');
+  url = url.replace("www.", '');
+  return url.split('.')[0];
+};
 
-// console.log('google : ' + domainName("http://google.com"));
-// console.log('google : ' + domainName("http://google.co.jp"));
-// console.log('xakep : ' + domainName("www.xakep.ru"));
-// console.log('youtube : ' + domainName("https://youtube.com"));
+console.log('google : ' + domainName("http://google.com"));
+console.log('google : ' + domainName("http://google.co.jp"));
+console.log('xakep : ' + domainName("www.xakep.ru"));
+console.log('youtube : ' + domainName("https://youtube.com"));
