@@ -196,3 +196,29 @@ return lastNumber
 // console.log('10 + 2 : ' + expandedForm(12));
 // console.log('40 + 2 : ' + expandedForm(42));
 // console.log('70000 + 300 + 4 : ' + expandedForm(70304));
+
+/* Extract the domain name from a URL
+
+Write a function that when given a URL as a string, 
+parses out just the domain name and returns it as a string.
+
+*/
+function domainName(url){
+  let result = []
+  let newResult = []
+  result.push(url.split('http://').join('').split('https://').join('').split('www.').join(''))
+  for (let i = 0; i < url.length; i++) {
+    if(result[0][i] != '.'){
+      newResult.push(result[0][i])
+    }else{
+      break
+    }
+  }
+  
+  return newResult.join('')
+}
+
+// console.log('google : ' + domainName("http://google.com"));
+// console.log('google : ' + domainName("http://google.co.jp"));
+// console.log('xakep : ' + domainName("www.xakep.ru"));
+// console.log('youtube : ' + domainName("https://youtube.com"));
