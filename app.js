@@ -244,3 +244,24 @@ function pigIt(str){
 // console.log('igPay atinlay siay oolcay : ' + pigIt('Pig latin is cool'));
 // console.log('hisTay siay ymay tringsay : ' + pigIt('This is my string'));
 // console.log('elloHay orldway ! : ' + pigIt('Hello world !'));
+
+/* Complementary DNA
+
+In DNA strings, symbols "A" and "T" 
+are complements of each other, as "C" and "G".
+
+*/
+function DNAStrand(dna){
+  let result = ''
+  for (let i = 0; i < dna.length; i++) {
+    if(dna[i] == 'A') result += 'T'
+    if(dna[i] == 'T') result += 'A'
+    if(dna[i] == 'G') result += 'C'
+    if(dna[i] == 'C') result += 'G'
+  }
+  return result
+}
+
+// console.log('TTTT : ' + DNAStrand("AAAA"));
+// console.log('TAACG : ' + DNAStrand("ATTGC"));
+// console.log('CATA : ' + DNAStrand("GTAT"));
