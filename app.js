@@ -301,3 +301,21 @@ function humanReadable(seconds) {
 // console.log('00:00:00 => ' + humanReadable(0));
 // console.log('00:01:00 => ' + humanReadable(60));
 // console.log('00:59:59 => ' + humanReadable(3599))
+
+/* Count by X
+
+Create a function with two arguments 
+that will return an array of the first (n) multiples of (x).
+
+*/
+function countBy(x, n) {
+  let number = 0
+  var z = [];
+  for (let i = 0; i < n; i++) {
+    number += x
+    z.push(number)
+  }
+  return z;
+}
+
+// console.log(countBy(2,10));
