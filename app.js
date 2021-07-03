@@ -319,3 +319,24 @@ function countBy(x, n) {
 }
 
 // console.log(countBy(2,10));
+
+/* Is n divisible by x and y?
+
+Create a function that checks if a number n is divisible 
+by two numbers x AND y. All inputs are positive, non-zero digits.
+
+*/
+function isDivisible(n, x, y) {
+  if(n<=0){
+    return false
+  }else {
+    if(n%x == 0 && n%y == 0){
+      return true
+    }else {
+      return false
+    }
+  }
+}
+
+// console.log('false : ' + isDivisible(3,3,4));
+// console.log('true : ' + isDivisible(12,3,4));
