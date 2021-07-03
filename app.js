@@ -265,3 +265,39 @@ function DNAStrand(dna){
 // console.log('TTTT : ' + DNAStrand("AAAA"));
 // console.log('TAACG : ' + DNAStrand("ATTGC"));
 // console.log('CATA : ' + DNAStrand("GTAT"));
+
+/* Human Readable Time
+
+Write a function, which takes a non-negative integer (seconds) 
+as input and returns the time in a human-readable format (HH:MM:SS)
+
+*/
+function humanReadable(seconds) {
+  let hour = 0
+  let minute = 0
+  let time = seconds
+  if(time % 3600 || time % 3600 == 0){
+    hour += Math.floor(time / 3600)
+    time = Math.floor(time - hour * 3600)
+  }
+  if(time % 60 || time % 60 == 0) {
+    minute += Math.floor(time / 60)
+    time = Math.floor(time - minute * 60)
+  }
+
+  if(hour < 10){
+    hour = '0' + hour.toString()
+  }
+  if(minute < 10){
+    minute = '0' + minute.toString()
+  }
+  if(time < 10){
+    time = '0' + time.toString()
+  }
+  
+  return `${hour}:${minute}:${time}`
+}
+
+// console.log('00:00:00 => ' + humanReadable(0));
+// console.log('00:01:00 => ' + humanReadable(60));
+// console.log('00:59:59 => ' + humanReadable(3599))
