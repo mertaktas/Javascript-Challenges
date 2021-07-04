@@ -398,20 +398,6 @@ The returned value should be an array in the format
 [second oldest age, oldest age].
 */
 function twoOldestAges(ages){
-  let firstBigNumber = 0;
-  let secondBigNumber = 0;
-  let result = []
-  for (let i = 0; i < ages.length; i++) {
-    if(ages[i] > firstBigNumber) firstBigNumber = ages[i]
-  }
-  let i = ages.findIndex(el => el == firstBigNumber)
-  ages.splice(i,1)
-  for (let i = 0; i < ages.length; i++) {
-    if(ages[i] > secondBigNumber) secondBigNumber = ages[i]
-  }
-  result.push(secondBigNumber)
-  result.push(firstBigNumber)
-
-  return result
+  return ages.sort(function(a,b){return a-b;}).slice(-2);
 }
-// console.log(twoOldestAges([1,5,87,45,8,8]))
+//console.log(twoOldestAges([1,5,87,45,8,8]))
