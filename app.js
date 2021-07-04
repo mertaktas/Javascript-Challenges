@@ -1,10 +1,19 @@
-// Multiply
+/* Problem 1 -> Multiply
+-------Description-------
+This code does not execute properly. Try to figure out why.
+*/
 function multiply(a, b){
     let result = a * b
     return result
 }
+// console.log(multiply(2,4));
 
-// Find The Odd İnt
+//***********************************************
+/* Problem 2 -> Find The Odd İnt
+-------Description-------
+Given an array of integers, 
+find the one that appears an odd number of times.
+*/ 
 function findOdd(numbers) {
     var count = 0;
     for(var i = 0; i < numbers.length; i++){
@@ -19,7 +28,14 @@ function findOdd(numbers) {
     }
 }
 
-// Find out which one of the given numbers differs from the others
+//***********************************************
+/* Problem 3 -> IQ Test
+-------Description-------
+Bob is preparing to pass IQ test. 
+The most frequent task in this test is 
+to find out which one of the given numbers 
+differs from the others.
+*/ 
 function iqTest(numbers){
     var a=[];
     var e =[];
@@ -36,8 +52,15 @@ function iqTest(numbers){
     
     return e[0]+1;
 }
+// console.log(iqTest("2 4 7 8 10"));
 
-// Separate the words with a space.
+//***********************************************
+/* Problem 4 -> Dubstep
+-------Description-------
+For example, a song with words "I AM X" can transform 
+into a dubstep remix as "WUBWUBIWUBAMWUBWUBX" and 
+cannot transform into "WUBWUBIAMWUBX".
+*/ 
 function songDecoder(song) {
     return song
       .split('WUB')
@@ -45,7 +68,14 @@ function songDecoder(song) {
       .join(' ')
 }
 
-// Find the divisors!
+//***********************************************
+/* Problem 5 -> Find the divisors!
+-------Description-------
+Create a function named divisors/Divisors that takes an integer 
+n > 1 and returns an array with all of 
+the integer's divisors(except for 1 and the number itself), 
+from smallest to largest. If the number is prime return the string
+*/
 function divisors(integer) {
     let arguments = [];
     for (let i = 2; i < integer; i++) {
@@ -60,14 +90,14 @@ function divisors(integer) {
     }
 }
 
-/* Take a Ten Minute Walk
-
+//***********************************************
+/* Problem 6 -> Take a Ten Minute Walk
+-------Description-------
 Note: you will always receive a valid array 
 containing a random assortment 
 of direction letters ('n', 's', 'e', or 'w' only). 
 It will never give you an empty array 
 (that's not a walk, that's standing still!).
-
 */
  function isValidWalk(walk) {
     let ns = 0, ew = 0; 
@@ -84,13 +114,13 @@ It will never give you an empty array
       return ns === 0 && ew === 0; 
 }
 
-/* Binary Addition
-
-  Implement a function that adds two numbers together 
-  and returns their sum in binary. 
-  The conversion can be done before, or after the addition.
-  The binary number returned should be a string.
- 
+//***********************************************
+/* Problem 7 -> Binary Addition
+-------Description-------
+Implement a function that adds two numbers together 
+and returns their sum in binary. 
+The conversion can be done before, or after the addition.
+The binary number returned should be a string.
  */
 function addBinary( a, b ){
     var sum = a + b,
@@ -104,13 +134,13 @@ function addBinary( a, b ){
     return binary;
 }
 
-/* Valid Parentheses
-
-    Write a function that takes a string of parentheses, 
-    and determines if the order of the parentheses is valid. 
-    The function should return true if the string is valid, 
-    and false if it's invalid.
-
+//***********************************************
+/* Problem 8 -> Valid Parentheses
+-------Description-------
+Write a function that takes a string of parentheses, 
+and determines if the order of the parentheses is valid. 
+The function should return true if the string is valid, 
+and false if it's invalid.
 */
 function validParentheses(parens) {
     let paren = parens;
@@ -122,13 +152,13 @@ function validParentheses(parens) {
     return paren.length === 0 ? true : false
 }
 
-/* Valid Braces
-
+//***********************************************
+/* Problem 9 -> Valid Braces
+-------Description-------
 Write a function that takes a string of braces, 
 and determines if the order of the braces is valid. 
 It should return true if the string is valid, 
 and false if it's invalid.
-
 */
 function validBraces(braces){
   let brace = braces;
@@ -139,14 +169,14 @@ function validBraces(braces){
   }
   return brace.length === 0 ? true : false
 }
-
 // console.log('true :'+ validBraces( "()" )) // true
 // console.log('true :'+ validBraces( "[]" )) // true
 // console.log('true :'+ validBraces( "{}" )) // true
 // console.log('true :'+ validBraces( "(){}[]" )) // true
 
-/* Bouncing Balls
-
+//***********************************************
+/* Problem 10 -> Bouncing Balls
+-------Description-------
 A child is playing with a ball on the nth floor of a tall building. 
 The height of this floor, h, is known.
 He drops the ball out of the window. The ball bounces (for example),
@@ -154,7 +184,6 @@ to two-thirds of its height (a bounce of 0.66).
 His mother looks out of a window 1.5 meters from the ground.
 How many times will the mother see the ball pass 
 in front of her window (including when it's falling and bouncing?
-
 */
 function bouncingBall(h,  bounce,  window) {
   let count = -1;
@@ -167,15 +196,14 @@ function bouncingBall(h,  bounce,  window) {
   }
   return count;
 }
-
 // console.log('3 : ' + bouncingBall(3.0, 0.66, 1.5));
 // console.log('15 : ' + bouncingBall(30.0, 0.66, 1.5));
 
-/* Write Number in Expanded Form
-
+//***********************************************
+/* Problem 11 -> Write Number in Expanded Form
+-------Description-------
 You will be given a number and 
 you will need to return it as a string in Expanded Form.
-
 */
 function expandedForm(num) {
 let number = num.toString().split('')
@@ -192,16 +220,15 @@ lastNumber = newNumber.filter(number => number != 0).join(' + ');
   
 return lastNumber
 }
-
 // console.log('10 + 2 : ' + expandedForm(12));
 // console.log('40 + 2 : ' + expandedForm(42));
 // console.log('70000 + 300 + 4 : ' + expandedForm(70304));
 
-/* Extract the domain name from a URL
-
+//***********************************************
+/* Problem 12 -> Extract the domain name from a URL
+-------Description-------
 Write a function that when given a URL as a string, 
 parses out just the domain name and returns it as a string.
-
 */
 function domainName(url){
   url = url.replace("https://", '');
@@ -215,12 +242,12 @@ function domainName(url){
 // console.log('xakep : ' + domainName("www.xakep.ru"));
 // console.log('youtube : ' + domainName("https://youtube.com"));
 
-/* Simple Pig Latin
-
+//***********************************************
+/* Problem 13 -> Simple Pig Latin
+-------Description-------
 Move the first letter of each word to the end of it, 
 then add "ay" to the end of the word. 
 Leave punctuation marks untouched.
-
 */
 function pigIt(str){
   let newString = str.split(' ')
@@ -240,16 +267,15 @@ function pigIt(str){
 
   return result.join(' ')
 }
-
 // console.log('igPay atinlay siay oolcay : ' + pigIt('Pig latin is cool'));
 // console.log('hisTay siay ymay tringsay : ' + pigIt('This is my string'));
 // console.log('elloHay orldway ! : ' + pigIt('Hello world !'));
 
-/* Complementary DNA
-
+//***********************************************
+/* Problem 14 -> Complementary DNA
+-------Description-------
 In DNA strings, symbols "A" and "T" 
 are complements of each other, as "C" and "G".
-
 */
 function DNAStrand(dna){
   let result = ''
@@ -261,16 +287,15 @@ function DNAStrand(dna){
   }
   return result
 }
-
 // console.log('TTTT : ' + DNAStrand("AAAA"));
 // console.log('TAACG : ' + DNAStrand("ATTGC"));
 // console.log('CATA : ' + DNAStrand("GTAT"));
 
-/* Human Readable Time
-
+//***********************************************
+/* Problem 15 -> Human Readable Time
+-------Description-------
 Write a function, which takes a non-negative integer (seconds) 
 as input and returns the time in a human-readable format (HH:MM:SS)
-
 */
 function humanReadable(seconds) {
   let hour = 0
@@ -294,19 +319,17 @@ function humanReadable(seconds) {
   if(time < 10){
     time = '0' + time.toString()
   }
-  
   return `${hour}:${minute}:${time}`
 }
-
 // console.log('00:00:00 => ' + humanReadable(0));
 // console.log('00:01:00 => ' + humanReadable(60));
 // console.log('00:59:59 => ' + humanReadable(3599))
 
-/* Count by X
-
+//***********************************************
+/* Problem 16 -> Count by X
+-------Description-------
 Create a function with two arguments 
 that will return an array of the first (n) multiples of (x).
-
 */
 function countBy(x, n) {
   let number = 0
@@ -317,14 +340,13 @@ function countBy(x, n) {
   }
   return z;
 }
-
 // console.log(countBy(2,10));
 
-/* Is n divisible by x and y?
-
+//***********************************************
+/* Problem 17 -> Is n divisible by x and y?
+-------Description-------
 Create a function that checks if a number n is divisible 
 by two numbers x AND y. All inputs are positive, non-zero digits.
-
 */
 function isDivisible(n, x, y) {
   if(n<=0){
@@ -337,17 +359,16 @@ function isDivisible(n, x, y) {
     }
   }
 }
-
 // console.log('false : ' + isDivisible(3,3,4));
 // console.log('true : ' + isDivisible(12,3,4));
 
-
 /* First non-repeating character
-
+//***********************************************
+/* Problem 18 -> First non-repeating character
+-------Description-------
 Write a function named first_non_repeating_letter 
 that takes a string input, and returns 
 the first character that is not repeated anywhere in the string.
-
 */
 function firstNonRepeatingLetter(s) {
   let count = 0;
@@ -365,6 +386,5 @@ function firstNonRepeatingLetter(s) {
   }
   if(count == 0) return ""
 }
-
 // console.log('t : ' + firstNonRepeatingLetter('stress'))
 // console.log('e : ' + firstNonRepeatingLetter('moonmen'));
