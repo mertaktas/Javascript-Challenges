@@ -340,3 +340,31 @@ function isDivisible(n, x, y) {
 
 // console.log('false : ' + isDivisible(3,3,4));
 // console.log('true : ' + isDivisible(12,3,4));
+
+
+/* First non-repeating character
+
+Write a function named first_non_repeating_letter 
+that takes a string input, and returns 
+the first character that is not repeated anywhere in the string.
+
+*/
+function firstNonRepeatingLetter(s) {
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    for (let j = 0; j < s.length; j++) {
+      if (s[i].toLowerCase() == s[j].toLowerCase()) {
+        count += 1
+      }
+    }
+    if( count <= 1){
+      return s[i]
+    }else {
+      count = 0
+    }
+  }
+  if(count == 0) return ""
+}
+
+// console.log('t : ' + firstNonRepeatingLetter('stress'))
+// console.log('e : ' + firstNonRepeatingLetter('moonmen'));
