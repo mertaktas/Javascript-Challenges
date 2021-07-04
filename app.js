@@ -362,7 +362,6 @@ function isDivisible(n, x, y) {
 // console.log('false : ' + isDivisible(3,3,4));
 // console.log('true : ' + isDivisible(12,3,4));
 
-/* First non-repeating character
 //***********************************************
 /* Problem 18 -> First non-repeating character
 -------Description-------
@@ -388,3 +387,31 @@ function firstNonRepeatingLetter(s) {
 }
 // console.log('t : ' + firstNonRepeatingLetter('stress'))
 // console.log('e : ' + firstNonRepeatingLetter('moonmen'));
+
+//***********************************************
+/* Problem 19 -> Two Oldest Ages
+-------Description-------
+The two oldest ages function/method needs to be completed. 
+It should take an array of numbers as its argument 
+and return the two highest numbers within the array. 
+The returned value should be an array in the format 
+[second oldest age, oldest age].
+*/
+function twoOldestAges(ages){
+  let firstBigNumber = 0;
+  let secondBigNumber = 0;
+  let result = []
+  for (let i = 0; i < ages.length; i++) {
+    if(ages[i] > firstBigNumber) firstBigNumber = ages[i]
+  }
+  let i = ages.findIndex(el => el == firstBigNumber)
+  ages.splice(i,1)
+  for (let i = 0; i < ages.length; i++) {
+    if(ages[i] > secondBigNumber) secondBigNumber = ages[i]
+  }
+  result.push(secondBigNumber)
+  result.push(firstBigNumber)
+
+  return result
+}
+// console.log(twoOldestAges([1,5,87,45,8,8]))
