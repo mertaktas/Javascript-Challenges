@@ -445,3 +445,23 @@ function findNextSquare(sq) {
 }
 // console.log(findNextSquare(121))
 // console.log(findNextSquare(625));
+
+//***********************************************
+/* Problem 21 -> Shortest Word
+-------Description-------
+Simple, given a string of words, 
+return the length of the shortest word(s).
+String will never be empty and you do not need 
+to account for different data types
+*/
+function findShort(s){
+  let wrd = s.split(' ')
+  let count = 10
+  for (let i = 0; i < wrd.length; i++) {
+    if(wrd[i].length < count){
+      count = wrd[i].length
+    }
+  }
+  return count
+}
+// console.log(findShort("Let's travel abroad shall we"));
