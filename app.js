@@ -465,3 +465,35 @@ function findShort(s){
   return count
 }
 // console.log(findShort("Let's travel abroad shall we"));
+
+//***********************************************
+/* Problem 22 -> Duplicate Encoder
+-------Description-------
+The goal of this exercise is to convert 
+a string to a new string where each character 
+in the new string is "(" if that character appears 
+only once in the original string, or ")" 
+if that character appears more than once 
+in the original string. Ignore capitalization 
+when determining if a character is a duplicate.
+*/
+function duplicateEncode(word){
+  let wrd = word.split('')
+  let count = 0
+  let result = []
+  for (let i = 0; i < wrd.length; i++) {
+    count = 0
+    for (let j = 0; j < wrd.length; j++) {
+      if(wrd[i].toLowerCase() === wrd[j].toLowerCase()){
+        count += 1
+      }
+    }
+    if(count > 1){
+      result.push(')')
+    }else {
+      result.push('(')
+    }
+  }
+  return result.join('')
+}
+// console.log(duplicateEncode("recepe"));
