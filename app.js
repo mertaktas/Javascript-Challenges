@@ -497,3 +497,13 @@ function duplicateEncode(word){
   return result.join('')
 }
 // console.log(duplicateEncode("recepe"));
+
+//***********************************************
+/* Problem 23 -> A square of squares
+-------Description-------
+Given an integral number, determine if it's a square number.
+*/
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n))
+}
+// console.log(isSquare(3));
