@@ -401,3 +401,47 @@ function twoOldestAges(ages){
   return ages.sort(function(a,b){return a-b;}).slice(-2);
 }
 //console.log(twoOldestAges([1,5,87,45,8,8]))
+
+// // Convert A Hex String To RGB
+// function hexStringToRGB(hexString) {
+//   let arr = [
+//     '0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'
+//   ]
+//   let color = []
+//   let result = {}
+//   color.push(hexString.split('#').join(''))
+//   let count = 0;
+//   for (let j = 0; j < 3; j++) {
+//     count= 0
+//     for (let i = 0; i < arr.length; i++) {
+//       if(color[0][j*2] == arr[i]){
+//         count = 16 * arr.indexOf(arr[i])
+        
+//       }
+//       if(color[0][(j*2)+1] == arr[i]){
+//         count += arr.indexOf(arr[i])
+
+//       }
+//     }
+//     result = {...result, count};
+//   }
+//   return `r:${result[0]}, g:${result[1]}, b:${result[2]}`
+// }
+// // console.log(hexStringToRGB('#111133'))
+
+//***********************************************
+/* Problem 20 -> Find the next perfect square!
+-------Description-------
+Complete the findNextSquare method that finds 
+the next integral perfect square after 
+the one passed as a parameter. Recall that 
+an integral perfect square is an integer n such 
+that sqrt(n) is also an integer.
+*/
+function findNextSquare(sq) {
+  let sqrt = Math.sqrt(sq)
+  if(sqrt % Math.floor(sqrt) == 0) return (sqrt+1) * (sqrt+1)
+  return -1
+}
+// console.log(findNextSquare(121))
+// console.log(findNextSquare(625));
