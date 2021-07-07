@@ -525,3 +525,22 @@ function isPangram(string){
   });
 }
 // console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+
+//***********************************************
+/* Problem 25 -> Mean Square Error
+-------Description-------
+Complete the function that
+- accepts two integer arrays of equal length
+- compares the value each member in one array to the corresponding member in the other
+- squares the absolute value difference between those two values
+- and returns the average of those squared absolute value difference between each member pair.
+*/
+var solution = function(firstArray, secondArray) {
+  count = 0;
+  for (let i = 0; i < firstArray.length; i++) {
+    count += (firstArray[i] - secondArray[i]) * (firstArray[i] - secondArray[i])
+  }
+  return count/firstArray.length
+}
+// console.log(solution([1,2,3],[4,5,6])); // 9
+// console.log(solution([10,20,10,2],[10,25,5,-2])); //16.5
