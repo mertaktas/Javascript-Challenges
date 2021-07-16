@@ -544,3 +544,12 @@ function fizzbuzz(n){
   return arr
 }
 // console.log(fizzbuzz(15));
+
+//***********************************************
+/* Problem 27 -> Reverse it, quickly!
+-------Description-------
+Your code needs to be as short as possible, in fact not longer than 28 characters
+Because you are scared and stressed you have forgotten how to use the standard reverse() method
+*/
+weirdReverse=a=>a.sort(a=>1)
+console.log(weirdReverse([1,2,3,4,5]))
