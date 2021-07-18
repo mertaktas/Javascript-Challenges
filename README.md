@@ -30,6 +30,8 @@ Beni takip etmek istersen : https://www.codewars.com/users/mertaktas231 linkinde
 * [Problem 23 -> A square of squares](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L475)
 * [Problem 24 -> Detect Pangram](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L485)
 * [Problem 25 -> Mean Square Error](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L503)
+* [Problem 26 -> Fizz Buzz](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L522)
+* [Problem 27 -> Reverse it, quickly!](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L549)
 
 ## Yazar
 
