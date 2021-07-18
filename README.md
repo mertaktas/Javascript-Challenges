@@ -32,6 +32,7 @@ Beni takip etmek istersen : https://www.codewars.com/users/mertaktas231 linkinde
 * [Problem 25 -> Mean Square Error](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L503)
 * [Problem 26 -> Fizz Buzz](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L522)
 * [Problem 27 -> Reverse it, quickly!](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L549)
+* [Problem 28 -> Moving Zeros To The End](https://github.com/mertaktas/javascript-challenges/blob/main/app.js#L558)
 
 ## Yazar
 
