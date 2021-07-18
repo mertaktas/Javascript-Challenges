@@ -552,4 +552,21 @@ Your code needs to be as short as possible, in fact not longer than 28 character
 Because you are scared and stressed you have forgotten how to use the standard reverse() method
 */
 weirdReverse=a=>a.sort(a=>1)
-console.log(weirdReverse([1,2,3,4,5]))
+// console.log(weirdReverse([1,2,3,4,5]))
+
+//***********************************************
+/* Problem 28 -> Moving Zeros To The End
+-------Description-------
+Write an algorithm that takes an array and moves all of the zeros to 
+the end, preserving the order of the other elements.
+*/
+var moveZeros = function (arr) {
+  let counts = 0;
+  arr.forEach(function (x) { if(x == 0) counts++; });
+  const array = arr.filter(ar => ar !== 0);
+  for (let i = 1; i <= counts; i++) {
+    array.push(0)
+  }
+  return array
+}
+// console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]))
