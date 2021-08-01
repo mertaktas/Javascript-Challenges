@@ -632,5 +632,18 @@ let shuffle = function (nums, n) {
   }
   return numArr
 } 
-console.log(shuffle([2,5,1,3,4,7],3))
+// console.log(shuffle([2,5,1,3,4,7],3))
+
+// Subtract the Product and Sum of Digits of an Integer
+var subtractProductAndSum = function(n) {
+  let sum = 0;
+  let product = 1;
+  String(n).split('').forEach(e => {
+    e = Number(e);
+    sum += e;
+    product *= e;
+  })
+  return product - sum
+};
+console.log(subtractProductAndSum(234))
 
