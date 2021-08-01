@@ -583,7 +583,7 @@ function salesByMatch(numbers) {
   return result
   
 }
-console.log(salesByMatch([10, 20, 20, 10, 10, 30, 50, 10, 20, '*']));
+// console.log(salesByMatch([10, 20, 20, 10, 10, 30, 50, 10, 20, '*']));
 
 function mountainClimbing(step) {
   let count = 0;
@@ -594,7 +594,7 @@ function mountainClimbing(step) {
   })
   return count - 1
 }
-console.log(mountainClimbing('UDDDUDUU'))
+// console.log(mountainClimbing('UDDDUDUU'))
 
 function jumpingNumber(str) {
   const strArr = str.split(' ')
@@ -611,4 +611,11 @@ function jumpingNumber(str) {
   }
   return count
 }
-console.log(jumpingNumber('0 0 0 1 0 0'))
+// console.log(jumpingNumber('0 0 0 1 0 0'))
+
+function removeDuplicates(nums) {
+  let set = new Set(nums)
+  return Array.from(set)
+}
+console.log(removeDuplicates([0,1,2,2,3,0,4,2]))
+
