@@ -645,5 +645,15 @@ var subtractProductAndSum = function(n) {
   })
   return product - sum
 };
-console.log(subtractProductAndSum(234))
+// console.log(subtractProductAndSum(234))
+
+// Defanging an IP Address
+var defangIPaddr = function (address) {
+  let str = '';
+  for (const c of address) {
+    str += c === '.' ? '[.]' : c
+  }
+  return str;
+};
+console.log(defangIPaddr("1.1.1.1"))
 
