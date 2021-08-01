@@ -595,3 +595,20 @@ function mountainClimbing(step) {
   return count - 1
 }
 console.log(mountainClimbing('UDDDUDUU'))
+
+function jumpingNumber(str) {
+  const strArr = str.split(' ')
+  let count = 0
+  let idx = 0
+  while (idx < strArr.length - 1) {
+    if (strArr[idx + 2] == '1') {
+      count += 1;
+      idx += 1;
+    } else if (strArr[idx + 2] == '0' || strArr[idx + 1] == '0') {
+      count += 1;
+      idx += 2;
+    }
+  }
+  return count
+}
+console.log(jumpingNumber('0 0 0 1 0 0'))
