@@ -617,5 +617,20 @@ function removeDuplicates(nums) {
   let set = new Set(nums)
   return Array.from(set)
 }
-console.log(removeDuplicates([0,1,2,2,3,0,4,2]))
+// console.log(removeDuplicates([0,1,2,2,3,0,4,2]))
+/*
+Shuffle the Array
+Input: nums = [2,5,1,3,4,7], n = 3
+Output: [2,3,5,4,1,7] 
+Explanation: Since x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 then the answer is [2,3,5,4,1,7].
+*/
+let shuffle = function (nums, n) {
+  const numArr = [];
+  for (let i = 0; i < n; ++i) {
+    numArr.push(nums[i])
+    numArr.push(nums[i + n])
+  }
+  return numArr
+} 
+console.log(shuffle([2,5,1,3,4,7],3))
 
