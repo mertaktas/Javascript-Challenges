@@ -584,3 +584,14 @@ function salesByMatch(numbers) {
   
 }
 console.log(salesByMatch([10, 20, 20, 10, 10, 30, 50, 10, 20, '*']));
+
+function mountainClimbing(step) {
+  let count = 0;
+  let height = 0;
+  [...step].forEach(c => {
+    height = c == 'U' ? height + 1 : height - 1;
+    count = !height ? count + 1 : count;
+  })
+  return count - 1
+}
+console.log(mountainClimbing('UDDDUDUU'))
