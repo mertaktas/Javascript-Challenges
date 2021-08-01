@@ -570,3 +570,17 @@ var moveZeros = function (arr) {
   return array
 }
 // console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]))
+
+function salesByMatch(numbers) {
+  const cleanedArr = numbers.filter(elem => elem == parseInt(elem))
+  const counts = {};
+  cleanedArr.map(elem => {
+    counts[elem] = counts[elem] ? counts[elem] + 1 : 1;
+  })
+  const result = Object.values(counts).reduce((acc, value) => {
+    return acc += parseInt(value/2)
+  }, 0)
+  return result
+  
+}
+console.log(salesByMatch([10, 20, 20, 10, 10, 30, 50, 10, 20, '*']));
