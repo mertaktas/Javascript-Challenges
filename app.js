@@ -675,5 +675,19 @@ var smallerNumbersThanCurrent = function(nums) {
   }
   return resultArr
 };
-console.log(smallerNumbersThanCurrent([8,1,2,2,3]))
+// console.log(smallerNumbersThanCurrent([8,1,2,2,3]))
 
+/**
+ * Problem - Build Array from Permutation
+ * Given a zero-based permutation nums (0-indexed), 
+ * build an array ans of the same length 
+ * where ans[i] = nums[nums[i]] 
+ * for each 0 <= i < nums.length and return it.
+ * 
+ * 
+*/
+var buildArray = function(nums) {
+    return (nums.length >= 1 && nums.length <= 1000) ? nums.map(e=>nums[e]) : false
+};
+
+console.log(buildArray([5,0,1,2,3,4]))
