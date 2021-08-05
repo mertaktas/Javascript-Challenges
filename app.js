@@ -690,4 +690,24 @@ var buildArray = function(nums) {
     return (nums.length >= 1 && nums.length <= 1000) ? nums.map(e=>nums[e]) : false
 };
 
-console.log(buildArray([5,0,1,2,3,4]))
+// console.log(buildArray([5,0,1,2,3,4]))
+
+
+/**
+ * Problem - Concatenation of Array
+ * 
+ * Given an integer array nums of length n, 
+ * you want to create an array ans 
+ * of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
+ * 
+ * Input: nums = [1,2,1]
+ * Output: [1,2,1,1,2,1]
+ * 
+ * 
+*/
+
+var getConcatenation = function(nums) {
+    return nums.concat(nums)
+};
+
+console.log(getConcatenation([1,2,1]));
