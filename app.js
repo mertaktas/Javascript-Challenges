@@ -725,11 +725,11 @@ var getConcatenation = function(nums) {
 */
 var runningSum = function (nums) {
   let arr = []
-  let leftNum = 0;
-  for (let i = 0; i < nums.length; i++) {
-    arr.push(nums[i] + leftNum)
-    leftNum += nums[i]
-  }
+  nums.map((num,index) => {
+    let leftNum = arr[index-1] || 0;
+    arr.push(num + leftNum)
+    leftNum += num
+   })
   return arr
 };
 
