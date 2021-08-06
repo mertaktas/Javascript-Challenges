@@ -733,4 +733,38 @@ var runningSum = function (nums) {
   return arr
 };
 
-console.log(runningSum([3,1,2,10,1]));
+// console.log(runningSum([3,1,2,10,1]));
+
+// var maximumWealth = function (accounts) {
+//   const result = 0;
+//   for (const account of accounts) {
+//     let curentValue = 0;
+//     for (const num of account) {
+//       curentValue += num;
+//       result = curentValue > result ? acc
+//     }
+//   }
+//   return result
+// };
+
+// console.log(maximumWealth([1,5],[7,3],[3,5]));
+
+/** Problem - Kids With the Greatest Number of Candies
+ * 
+ * Input: candies = [2,3,5,1,3], extraCandies = 3
+Output: [true,true,true,false,true] 
+Explanation: If you give all extraCandies to:
+- Kid 1, they will have 2 + 3 = 5 candies, which is the greatest among the kids.
+- Kid 2, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
+- Kid 3, they will have 5 + 3 = 8 candies, which is the greatest among the kids.
+- Kid 4, they will have 1 + 3 = 4 candies, which is not the greatest among the kids.
+- Kid 5, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
+ * 
+ * 
+*/
+var kidsWithCandies = function (candies, extraCandies) {
+  let result = []
+  candies.map(candie=> candie + extraCandies >= Math.max(...candies) ? result.push(true) : result.push(false))
+  return result
+};
+console.log(kidsWithCandies([4,2,1,1,2],1))
