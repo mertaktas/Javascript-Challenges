@@ -824,5 +824,28 @@ var numJewelsInStones = function (jewels, stones) {
   },0)
 };
 
-console.log(numJewelsInStones("z",
-"ZZ"));
+// console.log(numJewelsInStones("z",
+// "ZZ"));
+
+
+/** Problem - Shuffle String
+ * Given a string s and an integer array indices of the same length.
+ * The string s will be shuffled such that the character 
+ * at the ith position moves to indices[i] in the shuffled string.
+ * Return the shuffled string.
+ * 
+ * 
+*/
+var restoreString = function(s, indices) {
+  let arr = {}
+  let result = '';
+  indices.map((value, index) => {
+    arr[value] = s.split('')[index]
+  })
+  Object.values(arr).map(value=>result += value)
+  return result
+};
+let s = "codeleet"
+let indices = [4,5,6,7,0,2,1,3]
+console.log(restoreString(s, indices));
+
