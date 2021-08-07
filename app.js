@@ -735,20 +735,6 @@ var runningSum = function (nums) {
 
 // console.log(runningSum([3,1,2,10,1]));
 
-// var maximumWealth = function (accounts) {
-//   const result = 0;
-//   for (const account of accounts) {
-//     let curentValue = 0;
-//     for (const num of account) {
-//       curentValue += num;
-//       result = curentValue > result ? acc
-//     }
-//   }
-//   return result
-// };
-
-// console.log(maximumWealth([1,5],[7,3],[3,5]));
-
 /** Problem - Kids With the Greatest Number of Candies
  * 
  * Input: candies = [2,3,5,1,3], extraCandies = 3
@@ -789,4 +775,29 @@ function numIdenticalPairs(numbers) {
   
 }
 
-console.log(numIdenticalPairs([1,2,3,1,1,3]));
+// console.log(numIdenticalPairs([1,2,3,1,1,3]));
+
+/** Problem -  Richest Customer Wealth
+ * 
+ * Input: accounts = [[1,2,3],[3,2,1]]
+ * Output: 6
+ * Explanation:
+ * 1st customer has wealth = 1 + 2 + 3 = 6
+ * 2nd customer has wealth = 3 + 2 + 1 = 6
+ * Both customers are considered the richest with a wealth of 6 each, so return 6.
+ * 
+ * 
+*/
+var maximumWealth = function (accounts) {
+  let result = 0;
+  accounts.map(account => {
+    let currentValue = account.reduce((acc, current) => {
+      return acc += current
+    },0)
+    result <= currentValue ? result = currentValue : result
+  })
+  return result
+};
+
+console.log(maximumWealth(
+[[1,2,3],[3,2,1]]));
