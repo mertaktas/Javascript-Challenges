@@ -799,5 +799,30 @@ var maximumWealth = function (accounts) {
   return result
 };
 
-console.log(maximumWealth(
-[[1,2,3],[3,2,1]]));
+// console.log(maximumWealth(
+// [[1,2,3],[3,2,1]]));
+
+/** Problem - Jewels and Stones
+ * 
+ * You're given strings jewels representing 
+ * the types of stones that are jewels, 
+ * and stones representing the stones you have. 
+ * Each character in stones is a type of stone you have. 
+ * You want to know how many of the stones you have are also jewels.
+ * Letters are case sensitive, so "a" is considered a different type of stone from "A".
+ * 
+ * 
+*/
+
+var numJewelsInStones = function (jewels, stones) {
+  newStones = {}
+  stones.split('').map(elem => {
+    newStones[elem] = newStones[elem] ? newStones[elem] + 1 : 1;
+  })
+  return jewels.split('').reduce((acc, jew)=>{
+    return acc += newStones[jew] ? newStones[jew] : 0
+  },0)
+};
+
+console.log(numJewelsInStones("z",
+"ZZ"));
