@@ -865,5 +865,24 @@ var subtractProductAndSum = function(n) {
     return digits - sum
 };
 
-console.log(subtractProductAndSum(234));
+// console.log(subtractProductAndSum(234));
+
+
+/*** Problem - Number of Steps to Reduce a Number to Zero
+ * Given an integer num, return the number of steps to reduce it to zero.
+ * In one step, if the current number is even, you have to divide it by 2, otherwise, 
+ * you have to subtract 1 from it.
+ * 
+*/
+var numberOfSteps = function(num) {
+  let count = 0
+  let number = num
+  while (number > 0) {
+    number = (number % 2 == 1) ? number - 1 : number / 2;
+    count++;
+  }
+  return count
+}
+
+console.log(numberOfSteps(14));
 
