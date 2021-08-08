@@ -847,5 +847,23 @@ var restoreString = function(s, indices) {
 };
 let s = "codeleet"
 let indices = [4,5,6,7,0,2,1,3]
-console.log(restoreString(s, indices));
+// console.log(restoreString(s, indices));
+
+/** Problem - Subtract the Product and Sum of Digits of an Integer
+Given an integer number n, return the difference 
+between the product of its digits and the sum of its digits.
+
+*/
+var subtractProductAndSum = function(n) {
+    let input = n.toString().split('')
+    let digits = input.reduce((acc,val)=>{
+      return acc *= Number(val)
+    },1)
+    let sum = input.reduce((acc,val)=>{
+      return acc += Number(val)
+    },0)
+    return digits - sum
+};
+
+console.log(subtractProductAndSum(234));
 
