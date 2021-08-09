@@ -946,5 +946,23 @@ var countMatches = function(items, ruleKey, ruleValue) {
   return result
 };
 
-console.log(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver"));
+// console.log(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver"));
+
+/*** Problem - Split a String in Balanced Strings
+ * 
+ * Balanced strings are those that have an equal quantity of 'L' and 'R' characters.
+ * Given a balanced string s, split it in the maximum amount of balanced strings.
+ * Return the maximum amount of split balanced strings. 
+ * 
+ */
+var balancedStringSplit = function(s) {
+  let str = s.split('');
+  count = 0;
+  return str.reduce((acc,val)=>{
+    val == 'R' ? count++ : count--
+    return acc += count == 0 ? 1 : 0
+  },0)
+};
+
+console.log(balancedStringSplit("RLLLLRRRLR"));
 
