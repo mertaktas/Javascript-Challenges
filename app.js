@@ -988,6 +988,34 @@ var findCenter = function(edges) {
   }
 };
 let edges = [[1,2],[2,3],[4,2]]
-console.log(findCenter(edges));
 
+// console.log(findCenter(edges));
 
+/*** Problem - Sorting the Sentence
+ * 
+ * A sentence is a list of words that are separated by a single space 
+ * with no leading or trailing spaces. Each word consists of lowercase and uppercase English letters.
+ * A sentence can be shuffled by appending the 1-indexed word position 
+ * to each word then rearranging the words in the sentence.
+ * For example, the sentence "This is a sentence" can be shuffled 
+ * as "sentence4 a3 is2 This1" or "is2 sentence4 This1 a3"
+ * Given a shuffled sentence s containing no more than 9 words, reconstruct 
+ * and return the original sentence.
+ * 
+ * 
+ */
+
+var sortSentence = function(s) {
+    let obj = {}
+    let res = ''
+    let str = s.split(' ')
+    str.map((el,index) =>{
+      obj[el[el.length - 1]] = el.slice(0, -1);
+    })
+    Object.values(obj).map(el=>{
+      res += el + ' '
+    })
+    return res.slice(0, -1);
+};
+
+console.log(sortSentence(s = "is2 sentence4 This1 a3"));
