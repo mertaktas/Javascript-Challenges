@@ -1018,4 +1018,17 @@ var sortSentence = function(s) {
     return res.slice(0, -1);
 };
 
-console.log(sortSentence(s = "is2 sentence4 This1 a3"));
+// console.log(sortSentence(s = "is2 sentence4 This1 a3"));
+
+/*** Problem - Maximum Product Difference Between Two Pairs
+ * 
+ * The product difference between two pairs (a, b) and (c, d) is defined as (a * b) - (c * d).
+ * For example, the product difference between (5, 6) and (2, 7) is (5 * 6) - (2 * 7) = 16.
+ * 
+ */
+var maxProductDifference = function(nums) {
+    let arr = nums.sort((a,b)=>a-b)
+    return (arr[arr.length-1]*arr[arr.length-2])-(arr[0]*arr[1])
+};
+
+console.log(maxProductDifference(nums = [4,2,5,9,7,4,8]));
