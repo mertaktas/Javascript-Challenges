@@ -1043,4 +1043,54 @@ var maxProductDifference = function(nums) {
  */
 const minPartitions = n => Math.max(...n.split(''))
 
-console.log(minPartitions(n = "82734"))
+// console.log(minPartitions(n = "82734"))
+
+// var countPoints = function(points, queries) {
+//   let result = [];
+//   /**
+//    * [2,3,1]
+//    * x = [1,3] [3,3]
+//    * y = [2,2] [2,4]
+//    * result = [1,3] [2,3]
+//    */
+//   let count = 0
+//   queries.map(querie=>[
+//     querie.map((q,index)=>{
+
+//     })
+//   ])
+  
+//   return result;
+// };
+
+// console.log(countPoints(points = [[1,3],[3,3],[5,3],[2,2]], queries = [[2,3,1],[4,3,1],[1,1,2]]));
+
+/*** Problem - Minimum Number of Operations to Move All Balls to Each Box
+ * 
+ * You have n boxes. You are given a binary string boxes of length n, 
+ * where boxes[i] is '0' if the ith box is empty, and '1' if it contains one ball.
+ * In one operation, you can move one ball from a box to an adjacent box. 
+ * Box i is adjacent to box j if abs(i - j) == 1. Note that after doing so, 
+ * there may be more than one ball in some boxes.
+ * Return an array answer of size n, where answer[i] is the minimum number of operations needed 
+ * to move all the balls to the ith box.
+ * Each answer[i] is calculated considering the initial state of the boxes.
+ */
+var minOperations = function(boxes) {
+    // 2,4,5
+    let oneIdx = []
+    let result = []
+    boxes.split('').map((box,idx)=>{
+      box == '1' ? oneIdx.push(idx) : null
+    })
+    boxes.split('').reduce((acc,box,idx)=>{
+      acc = 0
+      oneIdx.map(one=>{
+        return acc += one>=idx ? one-idx : idx-one
+      })
+      result.push(acc)
+    },0)
+    return result
+};
+
+console.log(minOperations(boxes = "001011"));
