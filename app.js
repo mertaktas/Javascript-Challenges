@@ -1116,4 +1116,95 @@ var decompressRLElist = function(nums) {
     return result
 };
 
-console.log(decompressRLElist([1,2,3,4]));
+// console.log(decompressRLElist([1,2,3,4]));
+
+// var deepestLeavesSum = function(root) {
+//     /**
+//      * 1 - 6
+//      * 2 - 7 8
+//      * 4 - 2 7 1 3
+//      * 6 - 9 null 1 4 null null null 5
+//      */ 
+
+//     return root.reduce((acc,val,idx)=>{
+//       return acc += Math.floor(root.length / idx+1) === 1 ? val : 0
+//     },0)
+// };
+
+// console.log(deepestLeavesSum(root = [6,7,8,2,7,1,3,9,null,1,4,null,null,null,5]));
+
+/*** Problem - Max Increase to Keep City Skyline
+ * 
+ * There is a city composed of n x n blocks, where each block contains 
+ * a single building shaped like a vertical square prism. You are given 
+ * a 0-indexed n x n integer matrix grid where grid[r][c] represents 
+ * the height of the building located in the block at row r and column c.
+ * A city's skyline is the the outer contour formed by all the building 
+ * when viewing the side of the city from a distance. 
+ * The skyline from each cardinal direction north, east, south, and west may be different.
+ * We are allowed to increase the height of any number of buildings 
+ * by any amount (the amount can be different per building). 
+ * The height of a 0-height building can also be increased. 
+ * However, increasing the height of a building should not affect 
+ * the city's skyline from any cardinal direction.
+ * Return the maximum total sum that the height of the buildings can be increased 
+ * by without changing the city's skyline from any cardinal direction.
+ * 
+ * 
+ * 
+ */
+var maxIncreaseKeepingSkyline = function(grid) {
+    /* 
+    grid    = [
+                [3, 0, 8, 4],
+                [2, 4, 5, 7],
+                [9, 2, 6, 3],
+                [0, 3, 1, 0] ]
+    gridColumn = [
+                [3, 2, 9, 0],
+                [0, 4, 2, 3],
+                [8, 5, 6, 1],
+                [4, 7, 3, 0] ]
+    gridResult = [
+                [8, 4, 8, 7],
+                [7, 4, 7, 7],
+                [9, 4, 8, 7],
+                [3, 3, 3, 3] ]
+    */
+   // Calculate the width and height of the Array
+  var w = grid.length || 0;
+  var h = grid[0] instanceof Array ? grid[0].length : 0;
+
+  // In case it is a zero matrix, no transpose routine needed.
+  if(h === 0 || w === 0) { return []; }
+
+  /**
+   * @var {Number} i Counter
+   * @var {Number} j Counter
+   * @var {Array} t Transposed data is stored in this array.
+   */
+  let i, j, column = [];
+
+  // Loop through every item in the outer array (height)
+  for(i=0; i<h; i++) {
+
+    // Insert a new row (array)
+    column[i] = [];
+
+    // Loop through every item per item in outer array (width)
+    for(j=0; j<w; j++) {
+
+      // Save transposed data.
+      column[i][j] = grid[j][i];
+    }
+  }
+  let count = 0
+  grid.map((row,idX)=>{
+    row.map((val,idY)=>{
+      count += Math.max(...column[idY]) <= Math.max(...grid[idX]) ? Math.max(...column[idY]) - val : Math.max(...grid[idX]) - val
+    })
+  })
+  return count
+};
+
+console.log(maxIncreaseKeepingSkyline(grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]));
