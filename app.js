@@ -1207,4 +1207,33 @@ var maxIncreaseKeepingSkyline = function(grid) {
   return count
 };
 
-console.log(maxIncreaseKeepingSkyline(grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]));
+// console.log(maxIncreaseKeepingSkyline(grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]));
+
+/*** Problem - Queries on a Permutation With Key
+ * 
+ * Given the array queries of positive integers between 1 and m, you have to process all queries[i] 
+ * (from i=0 to i=queries.length-1) according to the following rules:
+ * In the beginning, you have the permutation P=[1,2,3,...,m]
+ * For the current i, find the position of queries[i] in the permutation P (indexing from 0) 
+ * and then move this at the beginning of the permutation P. Notice that the position of queries[i] 
+ * in P is the result for queries[i]
+ * Return an array containing the result for the given queries.
+ */
+
+var processQueries = function(queries, m) {
+  const p = []
+  const result = []
+  for (let i = 1;i <= m; i++) {
+    p.push(i)
+  }
+  queries.map(query=>{
+    if (p.indexOf(query) !== -1) {
+      result.push(p.indexOf(query))
+      p.splice(p.indexOf(query), 1);
+    }
+    p.unshift(query)
+  })
+  return result
+};
+
+console.log(processQueries(queries = [7,5,5,8,3],8))
