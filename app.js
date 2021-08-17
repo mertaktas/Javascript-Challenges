@@ -1297,4 +1297,22 @@ var arrayStringsAreEqual = function(word1, word2) {
 };
 
 let word1 = ["ab", "c"], word2 = ["a", "bc"]
-console.log(arrayStringsAreEqual(word1,word2));
+// console.log(arrayStringsAreEqual(word1,word2));
+
+var countConsistentStrings = function(allowed, words) {
+  
+    return words[0].split('')[0]
+};
+let allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
+// console.log(countConsistentStrings(allowed,words));
+
+/*** Problem - To Lower Case
+ * 
+ * Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.
+ * 
+ */
+var toLowerCase = function(s) {
+  return s.split('').map(item => item.toLowerCase()).join('')
+};
+
+console.log(toLowerCase("Hello"));
