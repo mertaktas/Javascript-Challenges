@@ -1255,4 +1255,31 @@ var checkIfPangram = function(sentence) {
 };
 
 let sentence = "thequickbrownfoxjumpsoverthelazydog"
-console.log(checkIfPangram(sentence))
+// console.log(checkIfPangram(sentence))
+
+// ceil up
+// floor down
+/*** Problem - Count of Matches in Tournament
+ * 
+ * You are given an integer n, the number of teams in a tournament that has strange rules:
+ * If the current number of teams is even, each team gets paired with another team. 
+ * A total of n / 2 matches are played, and n / 2 teams advance to the next round.
+ * If the current number of teams is odd, one team randomly advances in the tournament, 
+ * and the rest gets paired. A total of (n - 1) / 2 matches are played, 
+ * and (n - 1) / 2 + 1 teams advance to the next round.
+ * Return the number of matches played in the tournament until a winner is decided.
+ * 
+ * 
+ */
+var numberOfMatches = function(n) {
+    let loopCount = Math.ceil(Math.sqrt(n))
+    let result = 0
+    let numb = n
+    for (let i = 1; i <= loopCount+1; i++) {
+      result += Math.floor(numb/2)
+      numb = Math.ceil(numb/2)
+    }
+    return result
+};
+
+console.log(numberOfMatches(14));
