@@ -1335,4 +1335,27 @@ var truncateSentence = function(s, k) {
   return result.slice(0,-1)
 };
 
-console.log(truncateSentence(s = "Hello how are you Contestant", k = 4));
+// console.log(truncateSentence(s = "Hello how are you Contestant", k = 4));
+
+/**** Problem - Replace All Digits with Characters
+ * 
+ * Input: s = "a1c1e1"
+ * Output: "abcdef"
+ * Explanation: The digits are replaced as follows:
+ * - s[1] -> shift('a',1) = 'b'
+ * - s[3] -> shift('c',1) = 'd'
+ * - s[5] -> shift('e',1) = 'f'
+ * 
+ * 
+ */
+var replaceDigits = function(s) {
+    let result = []
+    for (let i = 0; i < s.length; i += 2) {
+      result.push(s[i])
+      let charCode = Number(s.charCodeAt(i)) + Number(s[i+1])
+      s[i+1] ? result.push(String.fromCharCode(charCode)) : null
+    }
+    return result.join('')
+};
+
+console.log(replaceDigits(s = "a1b2c3d4e"));
