@@ -1358,4 +1358,30 @@ var replaceDigits = function(s) {
     return result.join('')
 };
 
-console.log(replaceDigits(s = "a1b2c3d4e"));
+// console.log(replaceDigits(s = "a1b2c3d4e"));
+
+/*** Problem - Unique Morse Code Words
+ * International Morse Code defines a standard encoding where each letter is mapped 
+ * to a series of dots and dashes, as follows:
+ * 'a' maps to ".-",
+ * 'b' maps to "-...",
+ * 'c' maps to "-.-.", and so on.
+ * 
+ */
+var uniqueMorseRepresentations = function(words) {
+  let alphabetChar = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+  let str = ''
+  let result = []
+  words.map(item=>{
+    str = ''
+    item.split('').map(word=>{
+      str += alphabetChar[word.charCodeAt(0)-97]
+    })
+    result.push(str)
+  })
+  let uniq = [...new Set(result)];
+
+  return uniq.length
+};
+
+console.log(uniqueMorseRepresentations(words = ["gin","zen","gig","msg"]));
