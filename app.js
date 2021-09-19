@@ -1405,4 +1405,21 @@ var twoSum = function(nums, target) {
   return [...new Set(result)];
 };
 
-console.log(twoSum(nums = [3,2,4], target = 6));
+// console.log(twoSum(nums = [3,2,4], target = 6));
+
+/*** Problem - Median of Two Sorted Arrays
+ * 
+ * Given two sorted arrays nums1 and nums2 of size m and n respectively, 
+ * return the median of the two sorted arrays.
+ * The overall run time complexity should be O(log (m+n)).
+ * 
+ */
+
+var findMedianSortedArrays = function(nums1, nums2) {
+  let result = null
+  let sumArr = nums1.concat(nums2).sort((a,b)=>{return a - b})
+  sumArr.length % 2 == 1 ? result = sumArr[Math.floor(sumArr.length/2)] : result = (sumArr[(sumArr.length/2)-1] + sumArr[sumArr.length/2])/2
+  return result
+};
+
+console.log(findMedianSortedArrays(nums1 = [3], nums2 = [-2,-1]));
