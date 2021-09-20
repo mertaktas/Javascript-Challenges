@@ -1422,4 +1422,18 @@ var findMedianSortedArrays = function(nums1, nums2) {
   return result
 };
 
-console.log(findMedianSortedArrays(nums1 = [3], nums2 = [-2,-1]));
+// console.log(findMedianSortedArrays(nums1 = [3], nums2 = [-2,-1]));
+
+/*** Problem - Palindrome Number
+ * 
+ * Given an integer x, return true if x is palindrome integer.
+ * An integer is a palindrome when it reads the same backward as forward. 
+ * For example, 121 is palindrome while 123 is not.
+ * 
+ */
+
+var isPalindrome = function(x) {
+    return x == x.toString().split('').reverse().join('')
+};
+
+console.log(isPalindrome(x = 121));
