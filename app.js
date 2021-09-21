@@ -1436,4 +1436,24 @@ var isPalindrome = function(x) {
     return x == x.toString().split('').reverse().join('')
 };
 
-console.log(isPalindrome(x = 121));
+// console.log(isPalindrome(x = 121));
+
+/*** Problem - Valid Parentheses
+ * 
+ * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', 
+ * determine if the input string is valid.
+ * An input string is valid if:
+ * Open brackets must be closed by the same type of brackets.
+ * Open brackets must be closed in the correct order.
+ * 
+ */
+var isValid = function(s) {
+  let result = s
+  for (let i = 0; i < s.length; i++) {
+    result = result.split('[]').join('').split('()').join('').split('{}').join('')
+    
+  }
+    return result.length == 0
+};
+
+console.log(isValid(s = "(([]){})"));
