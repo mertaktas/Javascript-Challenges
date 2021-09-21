@@ -1456,4 +1456,27 @@ var isValid = function(s) {
     return result.length == 0
 };
 
-console.log(isValid(s = "(([]){})"));
+// console.log(isValid(s = "(([]){})"));
+
+/*** Problem - Search Insert Position
+ * 
+ * Given a sorted array of distinct integers and a target value, 
+ * return the index if the target is found. If not, 
+ * return the index where it would be if it were inserted in order.
+ * You must write an algorithm with O(log n) runtime complexity.
+ * 
+ */
+var searchInsert = function(nums, target) {
+  let result = null
+  let newNums = nums
+  if(nums.indexOf(target) >= 0){
+    result = nums.indexOf(target)
+  }else{
+    newNums.push(target)
+    newNums = newNums.sort((a,b)=>{return a - b})
+    result = newNums.indexOf(target)
+  }
+  return result
+};
+
+console.log(searchInsert(nums = [1,2,3,4,5,10], target = 7));
