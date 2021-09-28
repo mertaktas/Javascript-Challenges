@@ -1479,4 +1479,60 @@ var searchInsert = function(nums, target) {
   return result
 };
 
-console.log(searchInsert(nums = [1,2,3,4,5,10], target = 7));
+// console.log(searchInsert(nums = [1,2,3,4,5,10], target = 7));
+
+// var addTwoNumbers = function(l1, l2) {
+//   let num1 = []
+//   let num2 = []
+//   let num3 = []
+//   for (let i = 0; i < l1.length; i++) {
+//     num1.unshift(l1[i].toString())
+//   }
+//   for (let i = 0; i < l2.length; i++) {
+//     num2.unshift(l2[i].toString())
+//   }
+//   let sum = Number(num1.join('')) + Number(num2.join(''))
+//   for (let i = 0; i < sum.toString().length; i++) {
+//     num3.unshift(Number(sum.toString()[i]))
+//   }
+//   return num3
+// };
+
+// console.log(addTwoNumbers(l1 = [2,4,3], l2 = [5,6,4]));
+
+
+// var maxArea = function(height) {
+//     let result = []
+//     height.map((h,idx,arr)=>{
+//       for (let index = idx; index < height.length; index++) {
+//         if(arr[index+1] != undefined){
+//           if(h < arr[index+1]){
+//             result.push(h*(index+1-idx))
+//           }else{
+//             result.push(arr[index+1]*(index+1-idx))
+//           }
+//         }
+//       }
+//     })
+//     result.sort((a,b)=>a-b)
+//     return result[result.length-1]
+// };
+
+// console.log(maxArea(height = [4,3,2,1,4]));
+
+/*** Problem - Implement strStr()
+ * 
+ * Return the index of the first occurrence of needle in haystack,
+ * or -1 if needle is not part of haystack.
+ * What should we return when needle is an empty string? 
+ * This is a great question to ask during an interview.
+ * For the purpose of this problem, we will return 0 
+ * when needle is an empty string. This is consistent to C's strstr() 
+ * and Java's indexOf().
+ * 
+ */
+var strStr = function(haystack, needle) {
+    return haystack.search(needle)
+};
+
+console.log(strStr(haystack = "hello", needle = "ll"));
